@@ -1,0 +1,12 @@
+<!--<a routerLink="/todoList">List</a>-->
+<fieldset>
+    <legend>Add Todo</legend>
+    <ion-item text-wrap>
+        <ion-label fixed>Title</ion-label>
+        <ion-input type="text" [(ngModel)]="content"></ion-input>
+        <button ion-button item-right
+                (click)="addTodo()">
+            Add
+        </button>
+    </ion-item>
+</fieldset>

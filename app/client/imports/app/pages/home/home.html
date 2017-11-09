@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar color="navbar">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            {{"page-home.title" | translate}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>To Do</ion-card-header>
+        <ion-card-content>
+            <todo-list></todo-list>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <todo-add></todo-add>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

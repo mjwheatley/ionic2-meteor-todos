@@ -1,0 +1,47 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "npm-run-all prep:* --parallel watch:* meteor",
+    "meteor": "meteor run",
+    "prep:ios-css": "node-sass --include-path node_modules/ionic-angular/themes --include-path node_modules/ionicons/dist/scss ../theme/app.ios.scss | postcss --local-plugins --use autoprefixer --output public/stylesheets/ios-bundle.css",
+    "prep:md-css": "node-sass --include-path node_modules/ionic-angular/themes --include-path node_modules/ionicons/dist/scss ../theme/app.md.scss | postcss --local-plugins --use autoprefixer --output public/stylesheets/md-bundle.css",
+    "prep:fonts": "copyfiles -f 'node_modules/ionic-angular/fonts/*.+(ttf||woff||woff2)' public/fonts/",
+    "watch:css": "nodemon -w ../theme -e scss -x npm run prep:ios-css prep:md-css",
+    "prep": "mkdir -p public/stylesheets/ public/fonts/ && npm-run-all prep:* --parallel"
+  },
+  "dependencies": {
+    "@angular/animations": "^4.4.6",
+    "@angular/common": "^4.4.6",
+    "@angular/compiler": "^4.4.6",
+    "@angular/core": "^4.4.6",
+    "@angular/forms": "^4.4.6",
+    "@angular/http": "^4.4.6",
+    "@angular/platform-browser": "^4.4.6",
+    "@angular/platform-browser-dynamic": "^4.4.6",
+    "@angular/router": "^4.4.6",
+    "@ionic-native/core": "3.12.1",
+    "@ionic-native/splash-screen": "3.12.1",
+    "@ionic-native/status-bar": "3.12.1",
+    "@ionic/storage": "2.0.1",
+    "angular2-meteor": "0.7.1",
+    "babel-runtime": "^6.20.0",
+    "bcrypt": "^1.0.3",
+    "ionic-angular": "3.8.0",
+    "ionicons": "3.0.0",
+    "meteor-node-stubs": "~0.3.0",
+    "meteor-rxjs": "^0.4.8",
+    "ng2-translate": "^4.2.0",
+    "rxjs": "^5.4.2",
+    "zone.js": "^0.8.16"
+  },
+  "devDependencies": {
+    "@types/meteor": "1.4.12",
+    "autoprefixer": "6.3.5",
+    "copyfiles": "0.2.1",
+    "nodemon": "1.9.1",
+    "node-sass": "3.4.2",
+    "npm-run-all": "1.7.0",
+    "postcss-cli": "2.5.1",
+    "typescript": "2.2.1"
+  }
+}
